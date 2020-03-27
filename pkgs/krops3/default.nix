@@ -120,7 +120,7 @@ rec {
     ${lib.optionalString sudo "args=\"$args --use-remote-sudo\""}
 
     ${nixos-rebuild}/bin/nixos-rebuild $mode \
-      -I secrets="$tmpdir" \
+      -I secrets="$tmpdir/${name}" \
       -I nixos-config="${nixos-config}" \
       ${lib.optionalString useHostNixpkgs "-I nixpkgs=\"$NIXPKGS_SRC\""} \
       --build-host ${buildTarget'.host} \
