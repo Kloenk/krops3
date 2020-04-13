@@ -6,6 +6,6 @@
   outputs = { self, nixpkgs }:
   let
   in {
-    overlay = import ./pkgs/overlay {};
+    overlay = import ./pkgs/overlay.nix {};
   };
 }
